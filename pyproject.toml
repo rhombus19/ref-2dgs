@@ -38,6 +38,14 @@ nvdiffrast = { git="https://github.com/NVlabs/nvdiffrast.git"}
 torch = [{ index = "pytorch_cu113" }]
 torchvision = [{ index = "pytorch_cu113" }]
 
+[tool.uv.extra-build-dependencies]
+diff-surfel-2dgs = ["torch"]
+simple-knn = ["torch"]
+diff-surfel-rasterization = ["torch"]
+diff-surfel-rasterization-real = ["torch"]
+nvdiffrast = ["torch"]
+
+
 [[tool.uv.index]]
 name = "pytorch_cu113"
 url = "https://download.pytorch.org/whl/cu113"
