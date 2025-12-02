@@ -1,0 +1,44 @@
+[project]
+name = "ref-gs"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "imageio==2.31.2",
+    "imageio-ffmpeg==0.4.7",
+    "kornia==0.6.0",
+    "lpips==0.1.4",
+    "matplotlib==3.5.3",
+    "ninja==1.11.1.1",
+    "numpy==1.21.6",
+    "open3d==0.17.0",
+    "opencv-python==4.6.0.66",
+    "plyfile==0.9",
+    "scikit-image==0.19.3",
+    "scikit-learn==1.0.2",
+    "scipy==1.7.3",
+    "torch==1.12.1+cu113",
+    "torchmetrics==0.11.4",
+    "torchvision==0.13.1+cu113",
+    "tqdm==4.66.1",
+    "simple-knn",
+    "diff-surfel-2dgs",
+    "diff-surfel-rasterization",
+    "diff-surfel-rasterization-real",
+    "nvdiffrast",
+]
+
+[tool.uv.sources]
+simple-knn = { path = "submodules/simple-knn" }
+diff-surfel-2dgs = { path = "submodules/diff-surfel-2dgs" }
+diff-surfel-rasterization = { path = "submodules/diff-surfel-rasterization" }
+diff-surfel-rasterization-real = { path = "submodules/diff-surfel-rasterization-real" }
+nvdiffrast = { git="https://github.com/NVlabs/nvdiffrast.git"}
+torch = [{ index = "pytorch_cu113" }]
+torchvision = [{ index = "pytorch_cu113" }]
+
+[[tool.uv.index]]
+name = "pytorch_cu113"
+url = "https://download.pytorch.org/whl/cu113"
+explicit = true
